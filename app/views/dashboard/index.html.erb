@@ -1,8 +1,0 @@
-<% content_for :title, "Dashboard" %>
-
-<h1>Dashboard</h1>
-
-<p>Hello, <strong><%= Current.user.username %></strong>!</p>
-
-<%= link_to "Back to home", root_path %>
-<%= button_to "Logout", logout_path, method: :delete %>
