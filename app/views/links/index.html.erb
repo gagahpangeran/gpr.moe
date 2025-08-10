@@ -6,7 +6,8 @@
 
 <% @links.each do |link| %>
 <div>
-  <strong>Slug:</strong> <%= link.slug %>
-  <strong>URL:</strong> <%= link.url %>
+  <strong>Slug:</strong> <%= link.slug %><br>
+  <strong>URL:</strong> <%= link.url %><br>
+  <strong>Visit count:</strong> <%= link.visit_count %>
 <div>
 <% end %>
