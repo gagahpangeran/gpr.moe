@@ -15,4 +15,10 @@ module ActiveSupport
 
     # Add more helper methods to be used by all tests here...
   end
+
+  class ActionDispatch::IntegrationTest
+    setup do
+      host! "app.gpr.localhost"
+    end
+  end
 end
