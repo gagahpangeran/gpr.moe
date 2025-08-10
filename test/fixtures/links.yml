@@ -2,12 +2,12 @@
 
 one:
   slug: slug1
-  url: https://example.com/one
-  visit_count: 1
+  url: https://example.com
+  visit_count: 0
   user: one
 
 two:
   slug: slug2
-  url: https://example.com/two
+  url: https://gagahpangeran.com
   visit_count: 1
   user: two
