@@ -53,3 +53,8 @@ strong {
 em {
   font-style: italic;
 }
+
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
