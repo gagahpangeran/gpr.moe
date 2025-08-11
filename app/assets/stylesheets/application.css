@@ -17,6 +17,10 @@
   --white: #fffffe;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--bg-color);
   line-height: normal;
