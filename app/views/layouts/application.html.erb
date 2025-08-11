@@ -27,5 +27,10 @@
       <%= render "layouts/navbar" %>
       <%= yield %>
     </div>
+
+    <div class="toast">
+      <%= tag.div(flash[:alert], class: "alert") if flash[:alert] %>
+      <%= tag.div(flash[:notice], class: "notice") if flash[:notice] %>
+    </div>
   </body>
 </html>
