@@ -1,0 +1,32 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #faeee7;
+
+  ul {
+    display: flex;
+
+    li {
+      height: 50px;
+
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #33272a;
+        padding: 0 16px;
+
+        &:hover {
+          color: #ff8ba7;
+        }
+      }
+
+      &:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
