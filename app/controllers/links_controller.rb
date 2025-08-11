@@ -11,7 +11,7 @@ class LinksController < ApplicationController
     @link = Current.user.links.new(link_params)
 
     if @link.save
-      redirect_to links_path
+      redirect_to links_path, notice: "New slug added."
     else
       error_message = @link.errors.full_messages.first if @link.errors.any?
       flash.now[:alert] = error_message || "Something went wrong."
