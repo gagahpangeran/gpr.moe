@@ -1,9 +1,12 @@
 <% content_for :title, "Home" %>
 
-<h1>GPR.moe</h1>
+<main>
+  <h1>GPR.moe</h1>
 
-<% if authenticated? %>
-  <%= link_to "Links", links_path %>
-<% else %>
-  <%= link_to "Login", login_path %>
-<% end %>
+  <p>
+    This is just some random URL shortener website created by
+    <a href="https://gagahpangeran.com" target="_blank">GPR</a>. You can see the
+    <a href="https://github.com/gagahpangeran/gpr.moe/">source code</a> and host
+    it by yourself.
+  </p>
+</main>
