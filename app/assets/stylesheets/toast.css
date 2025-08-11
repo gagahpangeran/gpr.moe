@@ -1,0 +1,34 @@
+.toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  div {
+    font-size: 1.3rem;
+    background-color: var(--bg-toast);
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(calc(100% + 8px));
+    animation-name: slide-in-out;
+    animation-duration: 3s;
+  }
+
+  .alert {
+    --bg-toast: var(--pink-2);
+  }
+
+  .notice {
+    --bg-toast: var(--green-1);
+  }
+}
+
+@keyframes slide-in-out {
+  0% { transform: translateY(calc(100% + 8px)); }
+  20% { transform: translateY(-16px); }
+  80% { transform: translateY(-16px); }
+  100% { transform: translateY(calc(100% + 8px)); }
+}
