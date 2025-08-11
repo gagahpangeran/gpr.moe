@@ -20,7 +20,7 @@
         padding: 0 16px;
 
         &:hover {
-          color: var(--pink);
+          color: var(--pink-1);
         }
       }
 

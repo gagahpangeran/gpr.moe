@@ -12,11 +12,11 @@ input[type="text"], input[type="password"], input[type="submit"] {
 
 input[type="text"], input[type="password"] {
   background-color: var(--white);
-  border: 2px solid var(--pink);
+  border: 2px solid var(--pink-1);
 }
 
 input[type="submit"] {
-  background-color: var(--pink);
+  background-color: var(--pink-1);
   flex: 1;
   border: 0;
   cursor: pointer;
