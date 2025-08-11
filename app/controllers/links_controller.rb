@@ -13,6 +13,8 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to links_path
     else
+      error_message = @link.errors.full_messages.first if @link.errors.any?
+      flash.now[:alert] = error_message || "Something went wrong."
       render :new, status: :unprocessable_content
     end
   end
