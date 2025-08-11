@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #faeee7;
+  background-color: var(--bg-color);
 
   ul {
     display: flex;
@@ -16,11 +16,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #33272a;
+        color: var(--black-1);
         padding: 0 16px;
 
         &:hover {
-          color: #ff8ba7;
+          color: var(--pink);
         }
       }
 

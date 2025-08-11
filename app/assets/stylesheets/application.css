@@ -9,8 +9,16 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+:root {
+  --bg-color: #faeee7;
+  --pink: #ff8ba7;
+  --black-1: #33272a;
+  --black-2: #594a4e;
+  --white: #fffffe;
+}
+
 body {
-  background-color: #faeee7;
+  background-color: var(--bg-color);
   line-height: normal;
   font-family: "Noto Sans", sans-serif;
   font-weight: normal;
@@ -18,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #33272a;
+  color: var(--black-1);
   font-family: "Pacifico";
 }
 
@@ -56,7 +64,7 @@ em {
 }
 
 a {
-  color: #ff8ba7;
+  color: var(--pink);
   text-decoration: none;
   font-weight: 500;
 
@@ -72,4 +80,8 @@ a {
 
 main {
   padding: 0 16px;
+}
+
+p {
+  color: var(--black-2);
 }
