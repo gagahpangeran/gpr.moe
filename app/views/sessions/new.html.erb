@@ -1,11 +1,9 @@
 <% content_for :title, "Login" %>
 
-<main>
-  <h1>Login</h1>
+<h1>Login</h1>
 
-  <%= form_with url: login_path do |form| %>
-    <%= form.text_field :username, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your username", value: params[:username] %>
-    <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %>
-    <%= form.submit "Login" %>
-  <% end %>
-</main>
+<%= form_with url: login_path do |form| %>
+  <%= form.text_field :username, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your username", value: params[:username] %>
+  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %>
+  <%= form.submit "Login" %>
+<% end %>
