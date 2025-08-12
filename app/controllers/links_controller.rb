@@ -24,6 +24,11 @@ class LinksController < ApplicationController
   end
 
   def update
+    if @link.visit_count > 5
+      flash.now[:alert] = "Link can't be changed."
+      return render :edit, status: :forbidden
+    end
+
     if @link.update(link_params)
       redirect_to edit_link_path(@link), notice: "Link is updated."
     else
