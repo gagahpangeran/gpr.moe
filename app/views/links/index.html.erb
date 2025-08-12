@@ -10,13 +10,21 @@
   <tbody>
     <% @links.each do |link| %>
     <tr>
-      <td style="width: 15%;">
-        <a href="<%= slug_url(link.slug) %>"><%= link.slug %></a>
-        <button class="copy-button">Copy</button>
+      <td style="width: 15%;" data-controller="clipboard">
+        <a href="<%= slug_url(link.slug) %>" data-clipboard-target="anchor">
+          <%= link.slug %>
+        </a>
+        <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
+          Copy
+        </button>
       </td>
-      <td style="width: 70%;">
-        <a href="<%= link.url %>"><%= link.url %></a>
-        <button class="copy-button">Copy</button>
+      <td style="width: 70%;" data-controller="clipboard">
+        <a href="<%= link.url %>" data-clipboard-target="anchor">
+          <%= link.url %>
+        </a>
+        <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
+          Copy
+        </button>
       </td>
       <td style="width: 5%;">
         <%= link.visit_count %>
