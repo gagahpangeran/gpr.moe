@@ -6,8 +6,4 @@
   <%= link_to "Back to all links", links_path %>
 </div>
 
-<%= form_with model: @link do |form| %>
-  <%= form.text_field :url, required: true, placeholder: "Your long URL" %>
-  <%= form.text_field :slug, required: true, placeholder: "Your custom slug" %>
-  <%= form.submit "Create" %>
-<% end %>
+<%= render "form", link: @link %>

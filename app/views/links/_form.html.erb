@@ -1,0 +1,5 @@
+<%= form_with model: link do |form| %>
+  <%= form.text_field :url, required: true, placeholder: "Your long URL" %>
+  <%= form.text_field :slug, required: true, placeholder: "Your custom slug" %>
+  <%= form.submit %>
+<% end %>
