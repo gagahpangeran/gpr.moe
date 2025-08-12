@@ -4,17 +4,17 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   copy(event) {
     const url = event.target.dataset.text;
-    let status = "Copy";
+    let status = "default";
 
     try {
       navigator.clipboard.writeText(url);
-      status = "Copied!";
+      status = "success";
     } catch (error) {
       console.error("Failed to copy to clipboard", error);
-      status = "Failed";
+      status = "failed";
     }
 
-    event.target.innerText = status;
-    setTimeout(() => { event.target.innerText = "Copy"; }, 300);
+    event.target.className = status;
+    setTimeout(() => { event.target.className = "default"; }, 300);
   }
 }
