@@ -23,9 +23,11 @@
           <%= link.visit_count %>
         </td>
         <td>
-          <a href="<%= link.url %>">
-            <%= link.url %>
-          </a>
+          <div class="two-lines">
+            <a href="<%= link.url %>">
+              <%= link.url %>
+            </a>
+          </div>
           <div class="fixed-button">
             <%= render "copy-button", text: link.url %>
           </div>

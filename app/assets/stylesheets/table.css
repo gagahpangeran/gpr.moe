@@ -13,6 +13,10 @@ table {
     text-decoration: underline;
   }
 
+  div {
+    margin: 0;
+  }
+
   tr {
     &:nth-child(odd) {
       background-color: var(--pink-2);
@@ -34,7 +38,6 @@ table {
       top: 0;
       height: 100%;
       width: 32px;
-      margin: 0;
       opacity: 0.4;
       background-color: var(--pink-1);
 
@@ -46,5 +49,13 @@ table {
     &:hover > .fixed-button {
       display: block;
     }
+  }
+
+  .two-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
   }
 }
