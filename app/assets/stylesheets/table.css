@@ -33,6 +33,7 @@ table {
       background-color: var(--pink-1);
       border: none;
       padding: 0 8px;
+      font-size: 0.7rem;
 
       &:hover {
         opacity: 1;
