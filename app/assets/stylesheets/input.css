@@ -9,6 +9,11 @@ input[type="text"], input[type="password"], input[type="submit"], button[type="s
   font-weight: 700;
   line-height: inherit;
 
+  &.dangerous {
+    background-color: red;
+    color: var(--white);
+  }
+
   &:disabled {
     background-color: var(--pink-2);
     cursor: not-allowed;
