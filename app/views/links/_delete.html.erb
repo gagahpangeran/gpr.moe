@@ -1,0 +1,23 @@
+<div data-controller="delete-link">
+  <button class="dangerous" type="submit" data-action="delete-link#open">
+    Delete Link
+  </button>
+
+  <div data-delete-link-target="confirmation" class="hidden">
+    <input
+      type="text"
+      placeholder="Type the link slug"
+      data-slug="<%= link.slug %>"
+      data-action="delete-link#check"
+    >
+    <%=
+      button_to "I want to delete this link", link, method: :delete,
+      data: {
+        turbo_confirm: "Last chance, are you really sure? This cannot be undone.",
+        delete_link_target: "button"
+      },
+      class: "dangerous",
+      disabled: true
+    %>
+  </div>
+</div>
