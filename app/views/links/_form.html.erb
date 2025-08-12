@@ -1,15 +1,5 @@
 <%= form_with model: link do |form| %>
-  <% if disabled %>
-  <div>
-    You can't edit a link that has been visited more than 5 times.
-  </div>
-  <% end %>
   <%= form.text_field :url, required: true, placeholder: "Your long URL", disabled: disabled %>
   <%= form.text_field :slug, required: true, placeholder: "Your custom slug", disabled: disabled %>
-  <% if link.visit_count > 0 %>
-  <div>
-    <strong>Visit count:</strong> <%= link.visit_count %>
-  </div>
-  <% end %>
   <%= form.submit disabled: disabled %>
 <% end %>
