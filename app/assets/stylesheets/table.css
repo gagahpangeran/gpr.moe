@@ -28,51 +28,22 @@ table {
       padding-right: 40px;
     }
 
-
-    .copy-button {
+    .fixed-button {
       position: absolute;
       right: 0;
       top: 0;
-      margin: 0;
       height: 100%;
       width: 32px;
-      display: none;
-      opacity: 0.2;
+      margin: 0;
+      opacity: 0.4;
       background-color: var(--pink-1);
-      border: none;
-      font-size: 0.7rem;
 
-      button {
-        height: 100%;
-        width: 100%;
-        border: none;
-        padding: 0;
-        display: block;
-        cursor: pointer;
-        background-color: var(--pink-1);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 20px auto;
-
-        &.default {
-          background-image: url("clipboard-default.svg");
-        }
-
-        &.success {
-          background-image: url("clipboard-success.svg");
-        }
-
-        &.failed {
-          background-image: url("clipboard-failed.svg");
-        }
-      }
-
-      &:hover {
+      &:hover, &:active {
         opacity: 1;
       }
     }
 
-    &:hover > .copy-button {
+    &:hover > .fixed-button {
       display: block;
     }
   }

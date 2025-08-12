@@ -15,7 +15,9 @@
           <a href="<%= slug_url(link.slug) %>" data-turbo-prefetch="false">
             <%= link.slug %>
           </a>
-          <%= render "copy-button", text: slug_url(link.slug) %>
+          <div class="fixed-button">
+            <%= render "copy-button", text: slug_url(link.slug) %>
+          </div>
         </td>
         <td>
           <%= link.visit_count %>
@@ -24,7 +26,9 @@
           <a href="<%= link.url %>">
             <%= link.url %>
           </a>
-          <%= render "copy-button", text: link.url %>
+          <div class="fixed-button">
+            <%= render "copy-button", text: link.url %>
+          </div>
         </td>
         <td>
           <%= link_to "Edit", edit_link_path(link.id) %>

@@ -1,0 +1,30 @@
+.copy-button {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+
+  button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    background-color: var(--pink-1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+
+    &.default {
+      background-image: url("clipboard-default.svg");
+    }
+
+    &.success {
+      background-image: url("clipboard-success.svg");
+    }
+
+    &.failed {
+      background-image: url("clipboard-failed.svg");
+    }
+  }
+}
