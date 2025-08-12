@@ -6,4 +6,4 @@
   <%= link_to "Back to all links", links_path %>
 </div>
 
-<%= render "form", link: @link %>
+<%= render "form", link: @link, disabled: @link.visit_count > 5 %>
