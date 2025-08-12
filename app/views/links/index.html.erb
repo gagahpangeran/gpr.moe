@@ -12,9 +12,11 @@
     <tr>
       <td style="width: 15%;">
         <a href="<%= slug_url(link.slug) %>"><%= link.slug %></a>
+        <button class="copy-button">Copy</button>
       </td>
       <td style="width: 70%;">
         <a href="<%= link.url %>"><%= link.url %></a>
+        <button class="copy-button">Copy</button>
       </td>
       <td style="width: 5%;">
         <%= link.visit_count %>
