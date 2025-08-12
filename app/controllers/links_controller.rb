@@ -13,8 +13,7 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to links_path, notice: "New slug added."
     else
-      error_message = @link.errors.full_messages.first if @link.errors.any?
-      flash.now[:alert] = error_message || "Something went wrong."
+      flash.now[:alert] = error_message
       render :new, status: :unprocessable_content
     end
   end
@@ -29,5 +28,10 @@ class LinksController < ApplicationController
   private
     def link_params
       params.expect(link: [ :url, :slug ])
+    end
+
+    def error_message
+      error_message = @link.errors.full_messages.first if @link.errors.any?
+      error_message || "Something went wrong."
     end
 end
