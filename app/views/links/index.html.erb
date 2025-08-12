@@ -11,24 +11,20 @@
     <tbody>
       <% @links.each do |link| %>
       <tr>
-        <td data-controller="clipboard">
-          <a href="<%= slug_url(link.slug) %>" data-clipboard-target="anchor" data-turbo-prefetch="false">
+        <td>
+          <a href="<%= slug_url(link.slug) %>" data-turbo-prefetch="false">
             <%= link.slug %>
           </a>
-          <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
-            Copy
-          </button>
+          <%= render "copy-button", text: slug_url(link.slug) %>
         </td>
         <td>
           <%= link.visit_count %>
         </td>
-        <td data-controller="clipboard">
-          <a href="<%= link.url %>" data-clipboard-target="anchor">
+        <td>
+          <a href="<%= link.url %>">
             <%= link.url %>
           </a>
-          <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
-            Copy
-          </button>
+          <%= render "copy-button", text: link.url %>
         </td>
         <td>
           <%= link_to "Edit", edit_link_path(link.id) %>
