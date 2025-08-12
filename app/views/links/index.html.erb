@@ -26,11 +26,14 @@
           Copy
         </button>
       </td>
-      <td style="width: 5%;">
+      <td style="width: 2%;">
         <%= link.visit_count %>
       </td>
       <td style="width: 10%;">
         <%= link.created_at.strftime("%Y-%m-%d") %>
+      </td>
+      <td style="width: 3%">
+        <%= link_to "Edit", edit_link_path(link.id) %>
       </td>
     </tr>
     <% end %>

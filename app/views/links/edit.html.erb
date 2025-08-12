@@ -1,0 +1,9 @@
+<% content_for :title, "Edit Link" %>
+
+<h1>Edit Link</h1>
+
+<div>
+  <%= link_to "Back to all links", links_path %>
+</div>
+
+<%= render "form", link: @link %>

@@ -19,6 +19,13 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Current.user.links.find(params[:id])
+  end
+
+  def update
+  end
+
   private
     def link_params
       params.expect(link: [ :url, :slug ])
