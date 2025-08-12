@@ -18,6 +18,9 @@
           Copy
         </button>
       </td>
+      <td>
+        <%= link.visit_count %>
+      </td>
       <td data-controller="clipboard">
         <a href="<%= link.url %>" data-clipboard-target="anchor">
           <%= link.url %>
@@ -25,12 +28,6 @@
         <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
           Copy
         </button>
-      </td>
-      <td>
-        <%= link.visit_count %>
-      </td>
-      <td>
-        <%= link.created_at.strftime("%Y-%m-%d") %>
       </td>
       <td>
         <%= link_to "Edit", edit_link_path(link.id) %>
