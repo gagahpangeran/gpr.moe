@@ -61,3 +61,7 @@ main {
 p {
   color: var(--black-2);
 }
+
+.hidden {
+  display: none;
+}
