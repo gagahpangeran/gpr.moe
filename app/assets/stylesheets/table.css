@@ -1,5 +1,10 @@
-table {
+.table-wrapper {
   width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  min-width: 500px;
   background-color: var(--white);
   margin: 8px 0;
 

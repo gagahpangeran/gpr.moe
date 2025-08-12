@@ -6,33 +6,35 @@
   <%= link_to "Add new link", new_link_path %>
 </div>
 
-<table>
-  <tbody>
-    <% @links.each do |link| %>
-    <tr>
-      <td data-controller="clipboard">
-        <a href="<%= slug_url(link.slug) %>" data-clipboard-target="anchor" data-turbo-prefetch="false">
-          <%= link.slug %>
-        </a>
-        <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
-          Copy
-        </button>
-      </td>
-      <td>
-        <%= link.visit_count %>
-      </td>
-      <td data-controller="clipboard">
-        <a href="<%= link.url %>" data-clipboard-target="anchor">
-          <%= link.url %>
-        </a>
-        <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
-          Copy
-        </button>
-      </td>
-      <td>
-        <%= link_to "Edit", edit_link_path(link.id) %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="table-wrapper">
+  <table>
+    <tbody>
+      <% @links.each do |link| %>
+      <tr>
+        <td data-controller="clipboard">
+          <a href="<%= slug_url(link.slug) %>" data-clipboard-target="anchor" data-turbo-prefetch="false">
+            <%= link.slug %>
+          </a>
+          <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
+            Copy
+          </button>
+        </td>
+        <td>
+          <%= link.visit_count %>
+        </td>
+        <td data-controller="clipboard">
+          <a href="<%= link.url %>" data-clipboard-target="anchor">
+            <%= link.url %>
+          </a>
+          <button class="copy-button" data-action="clipboard#copy" data-clipboard-target="button">
+            Copy
+          </button>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_link_path(link.id) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
