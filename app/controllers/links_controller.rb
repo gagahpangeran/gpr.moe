@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  before_action :set_link, only: %i[ edit update ]
+
   def index
     @links = Current.user.links.all
   end
@@ -19,13 +21,16 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Current.user.links.find(params[:id])
   end
 
   def update
   end
 
   private
+    def set_link
+      @link = Current.user.links.find(params[:id])
+    end
+
     def link_params
       params.expect(link: [ :url, :slug ])
     end
