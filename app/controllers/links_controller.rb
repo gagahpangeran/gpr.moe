@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[ edit update ]
+  before_action :set_link, only: %i[ edit update destroy ]
 
   def index
     @links = Current.user.links.all
@@ -31,6 +31,15 @@ class LinksController < ApplicationController
 
     if @link.update(link_params)
       redirect_to edit_link_path(@link), notice: "Link is updated."
+    else
+      flash.now[:alert] = error_message
+      render :edit, status: :unprocessable_content
+    end
+  end
+
+  def destroy
+    if @link.update(url: nil)
+      redirect_to links_path, notice: "Link is deleted."
     else
       flash.now[:alert] = error_message
       render :edit, status: :unprocessable_content
