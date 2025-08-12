@@ -12,9 +12,9 @@
     padding: 8px 16px;
     border-radius: 4px;
     box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
-    transform: translateY(calc(100% + 8px));
+    transform: translateY(150%);
     animation-name: slide-in-out;
-    animation-duration: 3s;
+    animation-duration: 2s;
   }
 
   .alert {
@@ -27,8 +27,8 @@
 }
 
 @keyframes slide-in-out {
-  0% { transform: translateY(calc(100% + 8px)); }
-  20% { transform: translateY(-16px); }
+  0% { transform: translateY(150%); }
+  15% { transform: translateY(-16px); }
   80% { transform: translateY(-16px); }
-  100% { transform: translateY(calc(100% + 8px)); }
+  100% { transform: translateY(150%); }
 }
