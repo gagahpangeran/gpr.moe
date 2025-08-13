@@ -24,8 +24,8 @@
         }
       }
 
-      &:last-child {
-        margin-left: auto;
+      &.separator {
+        flex: 1;
       }
     }
   }
