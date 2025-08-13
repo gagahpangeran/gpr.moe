@@ -52,4 +52,13 @@ class LinkTest < ActiveSupport::TestCase
       Link.create!(slug: "sl/ug", url: "https://random.site", user: @user)
     end
   end
+
+  test "create root link" do
+    link = Link.create(slug: "/", url: "https://home.site", user: @user)
+
+    assert link.valid?
+    assert_equal "/", link.slug
+    assert_equal "https://home.site", link.url
+    assert_equal 0, link.visit_count
+  end
 end
