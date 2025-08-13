@@ -8,6 +8,13 @@
     <li>
       <%= link_to "Links", links_path %>
     </li>
+
+    <% if Current.user.admin? %>
+    <li>
+      <%= link_to "Admin", admin_root_path %>
+    </li>
+    <% end %>
+
     <li>
       <%= link_to "Logout", logout_path, data: { turbo_method: :delete } %>
     </li>
