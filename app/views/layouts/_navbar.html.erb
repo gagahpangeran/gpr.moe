@@ -8,10 +8,12 @@
     <li>
       <%= link_to "Links", links_path %>
     </li>
+    <% end %>
 
     <li class="separator">
     </li>
 
+    <% if authenticated? %>
     <% if Current.user.admin? %>
     <li>
       <%= link_to "Admin", admin_root_path %>
