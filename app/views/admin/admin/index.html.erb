@@ -2,6 +2,14 @@
 
 <h1>Admin</h1>
 
-<p>
-  This is admin area.
-</p>
+<% if @root_link %>
+<div>
+  You have root link.<br>
+  <strong>Destination:</strong> <a href="<%= @root_link.url %>"><%= @root_link.url %></a><br>
+  <strong>Visit count:</strong> <%= @root_link.visit_count %>
+</div>
+<% else %>
+<div>
+  You don't have root link set up.
+</div>
+<% end %>
