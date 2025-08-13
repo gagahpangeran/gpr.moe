@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_KEY: ${{ secrets.SSH_KEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create master key
+        run: echo "$RAILS_MASTER_KEY" > config/master.key
+
+      - name: Set up ssh
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Deploy with kamal
+        run: bin/kamal deploy
+      
+      - name: Remove ssh key
+        run: rm -rf ~/.ssh
