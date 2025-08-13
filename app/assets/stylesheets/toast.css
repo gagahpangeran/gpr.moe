@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  transform: translateY(150%);
 
   div {
     font-size: 1.3rem;
@@ -12,7 +13,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.2);
-    transform: translateY(150%);
+    transform: translateY(50%);
     animation-name: slide-in-out;
     animation-duration: 2s;
   }
@@ -27,8 +28,8 @@
 }
 
 @keyframes slide-in-out {
-  0% { transform: translateY(150%); }
-  15% { transform: translateY(-16px); }
-  80% { transform: translateY(-16px); }
-  100% { transform: translateY(150%); }
+  0% { transform: translateY(50%); }
+  15% { transform: translateY(-200%); }
+  80% { transform: translateY(-200%); }
+  100% { transform: translateY(50%); }
 }
