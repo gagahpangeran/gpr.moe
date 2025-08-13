@@ -3,20 +3,43 @@
     {
       "warning_type": "Redirect",
       "warning_code": 18,
-      "fingerprint": "f08821766cac76a276f99076847c8390b2d5acc92952bfe1c0b8162abb4ca4d2",
+      "fingerprint": "2310f94c9690abb79265e0d0ac77eaaec41e704269b939845aaacdeb30927e8c",
       "check_name": "Redirect",
       "message": "Possible unprotected redirect",
       "file": "app/controllers/slug_controller.rb",
-      "line": 9,
+      "line": 15,
       "link": "https://brakemanscanner.org/docs/warning_types/redirect/",
-      "code": "redirect_to(Link.find_by(:slug => params[:slug]).url, :status => :moved_permanently, :allow_other_host => true)",
+      "code": "redirect_to((Link.find_by(:slug => \"/\").url or root_url), :status => :moved_permanently, :allow_other_host => true)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "SlugController",
+        "method": "root"
+      },
+      "user_input": "Link.find_by(:slug => \"/\").url",
+      "confidence": "Weak",
+      "cwe_id": [
+        601
+      ],
+      "note": "this is intentional, we want to visit external url for our root link"
+    },
+    {
+      "warning_type": "Redirect",
+      "warning_code": 18,
+      "fingerprint": "2937c89f0f7d992f3f902e699e3f0921c9e1586953d0ca00fe8c4ee5bb7ba571",
+      "check_name": "Redirect",
+      "message": "Possible unprotected redirect",
+      "file": "app/controllers/slug_controller.rb",
+      "line": 21,
+      "link": "https://brakemanscanner.org/docs/warning_types/redirect/",
+      "code": "redirect_to(Link.find_by!(:slug => params[:slug]).url, :status => :moved_permanently, :allow_other_host => true)",
       "render_path": null,
       "location": {
         "type": "method",
         "class": "SlugController",
         "method": "visit"
       },
-      "user_input": "Link.find_by(:slug => params[:slug]).url",
+      "user_input": "Link.find_by!(:slug => params[:slug]).url",
       "confidence": "Weak",
       "cwe_id": [
         601
