@@ -15,6 +15,8 @@ export default class extends Controller {
     }
 
     event.target.className = status;
-    setTimeout(() => { event.target.className = "default"; }, 300);
+    setTimeout(() => {
+      event.target.className = "default";
+    }, 300);
   }
 }

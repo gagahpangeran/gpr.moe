@@ -41,7 +41,8 @@ table {
       opacity: 0.4;
       background-color: var(--pink-1);
 
-      &:hover, &:active {
+      &:hover,
+      &:active {
         opacity: 1;
       }
     }
