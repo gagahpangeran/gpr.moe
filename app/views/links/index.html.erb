@@ -12,9 +12,7 @@
       <% @links.each do |link| %>
       <tr>
         <td>
-          <a href="<%= slug_url(link.slug) %>" data-turbo-prefetch="false">
-            <%= link.slug %>
-          </a>
+          <%= link_to link.slug, link_path(link) %>
           <div class="fixed-button">
             <%= render "copy-button", text: slug_url(link.slug) %>
           </div>

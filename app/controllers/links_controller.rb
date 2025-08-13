@@ -1,8 +1,11 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[ edit update destroy ]
+  before_action :set_link, only: %i[ show edit update destroy ]
 
   def index
     @links = Current.user.links.all
+  end
+
+  def show
   end
 
   def new

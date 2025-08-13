@@ -1,0 +1,24 @@
+<% content_for :title, "#{@link.slug} Link" %>
+
+<h1><%= @link.slug %> Link</h1>
+
+<div>
+  <%= link_to "Back to all links", links_path %>
+</div>
+
+<ul>
+  <li>
+    <strong>Slug:</strong>
+    <a href="<%= slug_path(@link.slug) %>" data-turbo-prefetch="false">
+      <%= @link.slug %>
+    </a>
+  </li>
+  <li>
+    <strong>Visit Count:</strong>
+    <%= @link.visit_count %>
+  </li>
+  <li>
+    <strong>URL:</strong>
+    <a href="<%= @link.url %>"><%= @link.url %></a>
+  </li>
+</ul>
