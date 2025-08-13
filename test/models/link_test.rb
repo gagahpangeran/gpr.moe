@@ -46,4 +46,10 @@ class LinkTest < ActiveSupport::TestCase
       Link.create!(slug: slug, url: "https://random.site", user: @user)
     end
   end
+
+  test "insert invalid character" do
+    assert_raises ActiveRecord::RecordInvalid do
+      Link.create!(slug: "sl/ug", url: "https://random.site", user: @user)
+    end
+  end
 end

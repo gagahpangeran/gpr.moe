@@ -2,7 +2,8 @@ class Link < ApplicationRecord
   belongs_to :user
 
   validates :slug, presence: { message: "can not empty" },
-                    uniqueness: { case_sensitive: false, message: "already exists" }
+                    uniqueness: { case_sensitive: false, message: "already exists" },
+                    format: { with: /\A[a-zA-Z0-9_-]+\z/, message: "can only contains 'a-z', 'A-Z', '0-9', '-', and '_'." }
 
   before_update :reset_visit_count
   scope :with_url, -> { where.not(url: nil) }
