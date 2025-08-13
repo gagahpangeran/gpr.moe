@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_09_162543) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_13_035609) do
   create_table "links", force: :cascade do |t|
     t.string "slug", null: false
     t.string "url"
@@ -37,6 +37,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_09_162543) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
