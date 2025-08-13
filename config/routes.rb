@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   end
 
+  get "/", to: "slug#root", as: :slug_root
   get "/:slug", to: "slug#visit", as: :slug
 end
