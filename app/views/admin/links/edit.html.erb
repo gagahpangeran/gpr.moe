@@ -1,0 +1,12 @@
+<% content_for :title, "Update Root Link" %>
+
+<h1>Update Root Link</h1>
+
+<div>
+  <%= link_to "Back to admin area", admin_root_path %>
+</div>
+
+<%= form_with model: [:admin, @link] do |form| %>
+  <%= form.text_field :url, required: true, placeholder: "Your long URL", value: @link.url %>
+  <%= form.submit %>
+<% end %>

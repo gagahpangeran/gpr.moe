@@ -6,7 +6,8 @@
 <div>
   You have root link.<br>
   <strong>Destination:</strong> <a href="<%= @root_link.url %>"><%= @root_link.url %></a><br>
-  <strong>Visit count:</strong> <%= @root_link.visit_count %>
+  <strong>Visit count:</strong> <%= @root_link.visit_count %><br>
+  <%= link_to "Update root link.", edit_admin_link_path %>
 </div>
 <% else %>
 <div>
