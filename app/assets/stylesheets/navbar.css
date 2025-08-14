@@ -4,12 +4,14 @@
   left: 0;
   width: 100%;
   background-color: var(--bg-color);
+  height: 50px;
 
   ul {
     display: flex;
+    height: 100%;
 
     li {
-      height: 50px;
+      height: 100%;
 
       a {
         height: 100%;
