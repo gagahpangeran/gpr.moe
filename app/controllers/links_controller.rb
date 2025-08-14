@@ -33,7 +33,7 @@ class LinksController < ApplicationController
     end
 
     if @link.update(link_params)
-      redirect_to edit_link_path(@link), notice: "Link is updated."
+      redirect_to link_path(@link), notice: "Link is updated."
     else
       flash.now[:alert] = error_message
       render :edit, status: :unprocessable_content
