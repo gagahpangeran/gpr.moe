@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--bg-color);
   height: 50px;
+  background-color: var(--pink-1);
 
   ul {
     display: flex;
@@ -22,7 +22,7 @@
         padding: 0 16px;
 
         &:hover {
-          color: var(--pink-1);
+          color: var(--white);
         }
       }
 
