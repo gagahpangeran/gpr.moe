@@ -24,6 +24,9 @@
 }
 
 body {
+  --wrapper-width: 720px;
+  --navbar-height: 50px;
+
   background-color: var(--bg-color);
   line-height: normal;
   font-family: "Noto Sans", sans-serif;
@@ -50,12 +53,14 @@ a {
 }
 
 .wrapper {
-  max-width: 720px;
+  max-width: var(--wrapper-width);
   margin: 0 auto;
 }
 
 main {
-  padding: 0 16px;
+  padding-top: var(--navbar-height);
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 p {

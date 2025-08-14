@@ -1,16 +1,17 @@
 .navbar {
-  --navbar-height: 50px;
-
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--pink-1);
   height: var(--navbar-height);
+  z-index: 2;
 
   ul {
     display: flex;
     height: 100%;
+    max-width: var(--wrapper-width);
+    margin: 0 auto;
 
     li {
       height: 100%;
