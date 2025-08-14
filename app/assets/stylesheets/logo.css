@@ -1,0 +1,10 @@
+.logo {
+  margin-top: 20px;
+  text-align: center;
+
+  img {
+    max-width: 320px;
+    width: 70%;
+    height: auto;
+  }
+}
