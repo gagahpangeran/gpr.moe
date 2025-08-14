@@ -33,4 +33,48 @@
       }
     }
   }
+
+  .menu {
+    display: none;
+
+    button {
+      height: var(--navbar-height);
+      width: var(--navbar-height);
+      background: url("menu-button.svg") center center no-repeat;
+      background-size: 50% auto;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    ul {
+      position: absolute;
+      top: var(--navbar-height);
+      left: 0;
+      flex-direction: column;
+      height: calc(100vh - var(--navbar-height));
+      width: 100%;
+      background-color: var(--pink-2);
+      transition: transform 200ms ease-in-out;
+      
+      &[data-mobile-state="open"] {
+        transform: translateX(0%);
+      }
+
+      &[data-mobile-state="close"] {
+        transform: translateX(-100%);
+      }
+
+      li {
+        height: var(--navbar-height);
+      }
+    }
+
+    .menu {
+      display: block;
+    }
+  }
 }

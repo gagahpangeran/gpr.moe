@@ -1,5 +1,12 @@
-<div class="navbar">
-  <ul>
+<div class="navbar" data-controller="navbar-drawer">
+  <div class="menu">
+    <button type="button" data-action="navbar-drawer#toggle"></button>
+  </div>
+
+  <ul
+    data-navbar-drawer-target="menu"
+    data-mobile-state="close"
+  >
     <li>
       <%= link_to "Home", root_path %>
     </li>
