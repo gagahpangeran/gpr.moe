@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
   belongs_to :user
+  has_many :daily_visits, dependent: :destroy
 
   validates :slug,
     presence: { message: "can not empty" },
