@@ -26,3 +26,5 @@
 <div>
   <%= link_to "Edit link", edit_link_path(@link) %>
 <div>
+
+<%= render "daily-visits", daily_visits: @link.daily_visits %>
