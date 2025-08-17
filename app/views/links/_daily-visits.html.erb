@@ -1,0 +1,20 @@
+<div class="daily-visits">
+  <h2>Daily Visits</h2>
+
+  <% if daily_visits.empty? %>
+  <p>No data</p>
+  <% else %>
+
+  <% daily_visits.each do | dv | %>
+  <ul>
+    <li>
+      <strong>Date:</strong> <%= dv.visited_at %>
+    </li>
+    <li>
+      <strong>Visit Count:</strong> <%= dv.count %>
+    </li>
+  </ul>
+  <% end %>
+
+  <% end %>
+</div>
