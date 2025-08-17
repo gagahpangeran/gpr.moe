@@ -5,7 +5,7 @@ class SlugController < ApplicationController
     link = Link.find_by(slug: "/")
 
     if link
-      link.increment!(:visit_count)
+      link.increment_visit_count
       url = link.url
     else
       url = root_url
@@ -16,7 +16,7 @@ class SlugController < ApplicationController
 
   def visit
     link = Link.find_by!(slug: params[:slug])
-    link.increment!(:visit_count)
+    link.increment_visit_count
     redirect_to link.url, status: :moved_permanently, allow_other_host: true
   end
 end

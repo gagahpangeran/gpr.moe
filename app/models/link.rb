@@ -18,8 +18,17 @@ class Link < ApplicationRecord
 
   default_scope { with_url }
 
+  def increment_visit_count
+    increment!(:visit_count)
+
+    daily_visit = daily_visits.find_or_initialize_by(visited_at: Date.current)
+    daily_visit.count += 1
+    daily_visit.save!
+  end
+
   private
     def reset_visit_count
       self.visit_count = 0
+      self.daily_visits.destroy_all
     end
 end
