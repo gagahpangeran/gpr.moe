@@ -10,7 +10,7 @@
   <%= link_to "Update root link.", edit_admin_link_path %>
 </div>
 
-<%= render "links/daily-visits", daily_visits: @root_link.daily_visits %>
+<%= render "links/daily-visits", chart_data: @root_link.daily_visits_chart_data %>
 <% else %>
 <div>
   You don't have root link set up.
