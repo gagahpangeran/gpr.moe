@@ -26,6 +26,17 @@ class Link < ApplicationRecord
     daily_visit.save!
   end
 
+  def daily_visits_chart_data(start_date: nil, end_date: nil)
+    end_date ||= Date.current
+    start_date ||= [ created_at.to_date, end_date - 7.days ].max
+
+    data = daily_visits.where(visited_at: start_date..end_date)
+                        .group(:visited_at)
+                        .sum(:count)
+
+    (start_date..end_date).map { |date| [ date, data[date] || 0 ] }
+  end
+
   private
     def reset_visit_count
       self.visit_count = 0
